@@ -1,8 +1,0 @@
-DirectoryIndex main.html index.html
-
-# AddHandler x-mapp-php5  .php                                                        
-# Action  x-mapp-php5 /system-bin/php5exe
-
-# RewriteEngine On
-# RewriteCond %{HTTP_HOST} !^www\.dildo-generator\.com$
-# RewriteRule ^(.*)$ http://www.dildo-generator.com/$1 [L,R=301]
