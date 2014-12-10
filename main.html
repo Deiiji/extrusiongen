@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html> 
 <head> 
-<title>Extrusion and Revolution Solids - A Dildo Generator</title> 
+<title>Extrusion and Revolution Solids</title> 
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="A bleeding edge HTML5/WebGL/THREE.js dildo generator for 3D printing." />
-<meta name="author" content="Ikaros Kappler" />
-<meta name="keywords" content="dildo, generator, three.js, webgl, html5, bleeding edge, dildo generator, javascript" />
+<meta name="description" content="A bleeding edge HTML5/WebGL/THREE.js revolution modeling for 3D printing." />
+<meta name="keywords" content="three.js, webgl, html5, bleeding edge, javascript" />
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="moo_tools_drop_down_menu/css/dropdown.css" />
 
@@ -15,9 +14,7 @@
   background-color: #f8f8f8;
   }
 </style>
-<script src="function.isDildoGeneratorDomain.js" type="text/javascript"></script>
 <script src="config.js" type="text/javascript"></script>
-<script src="merchant_tools.js" type="text/javascript"></script>
 
 </head> 
 
@@ -195,28 +192,6 @@
 	</td>			     
       </tr>
 
-
-      <!-- This field 'Twist' is currently not in use as it breaks the mold models in some cases (self-intersecting mesh) -->
-      <!--
-	  <tr>
-	    <td style="vertical-align: top; width: 100px;">Twist* (<span id="preview_twist_display">0</span>%):</td>
-	    <td style="">
-	      <script>
-		preview_twist_mousedown = false;
-              </script>
-	      <br/>
-	      0%<input type="range" id="preview_twist" name="preview_twist" min="0" max="15" value="0" 
-                       style="width: 150px; margin-top: -12px;"
-		       onmousedown="preview_twist_mousedown=true;"
-		       onmouseup="preview_twist_mousedown=false;"
-		       onmousemove="if(preview_twist_mousedown) displayTwistValue();"
-		       onchange="displayTwistValue(); preview_rebuild_model();" 
-		       disabled="disabled" />15%<br/>
-	      <div style="text-align: right; font-size: 8pt;">*experimental</div>
-
-	    </td>			     
-	  </tr>
-	  -->
       <input type="hidden" id="preview_twist" name="preview_twist" min="0" max="15" value="0" />
 
 
@@ -232,41 +207,6 @@
 	  <input type="radio" name="shape_style" id="shape_style_triangle" value="triangle" onchange="preview_rebuild_model();" disabled="disabled" /> <label for="shape_style_triangle" class="disabled">Triangle</label>
 	</td>			     
       </tr>
-
-
-      <tr>
-	<td></td>
-	<td style="text-align: center;">
-	  <div style="margin-top: 55px; margin-left: 25px;">
-	    <script language="Javascript">
-	      if( true || isDildoGeneratorDomain() ) {
-	      document.write( "Featured by:<br/>\n" );
-	      document.write( "<table border=\"0\">\n" );
-		document.write( "<tr><td style=\"padding: 10px;\">\n" );  
-		    
-		    document.write( "<a href=\"http://www.youin3d.com\" target=\"_blank\">" );
-		      document.write( "<img src=\"img/YOUin3D.com_C_75x64.png\" width=\"75\" height=\"64\" alt=\"YOUin3D.com\" /><br>\n" );
-		      document.write( "YOUin3D.com</a>\n ");
-
-		    document.write( "</td><td style=\"padding: 10px;\">\n" );
-		    document.write( "<a href=\"http://www.polygon-berlin.de\" target=\"_blank\">" );
-		      document.write( "<img src=\"img/logo_polygon_berlin_68x62.png\" width=\"70\" height=\"64\" alt=\"POLYGON Berlin\" /><br>\n" );
-		      document.write( "POLYGON Berlin</a>\n ");
-
-		    document.write( "</td></tr><tr><td colspan=\"2\" style=\"padding: 10px;\">\n" );
-		    
-		    document.write( "<a href=\"http://www.wamungo.com\" target=\"_blank\">" );
-		      document.write( "<img src=\"img/Wamungo-3D-Druck_freigestellt_125x36.png\" width=\"62\" height=\"18\" alt=\"Wamungo - 3D Druck - Alles f&uuml;r Alle\" /><br>\n" );
-		      document.write( "Wamungo.com</a><br/><br/>\n ");
-		    
-		    document.write( "</td></tr></table>\n" );
-	      }
-	    </script>
-	  </div>
-	</td>
-      </tr>
-
-
     </table>
   </div>
   <!-- END - - - - - -  MESH CONTROLS REGISTER CARD - - - - - - - - - - - - - -->
@@ -461,29 +401,6 @@
 
 
 
-<div class="register_card" id="background_settings" style="display: none;">
-<h3>Background Settings</h3>
-<form name="bezier_background_form">
-  <table style="border: 0;">
-    <tr>
-      <td><input type="radio" name="bezier_background_type" id="bezier_background_default" value="default" onchange="changeBezierBackgroundType();" checked="checked" /></td>
-      <td colspan="2"><label for="bezier_background_default">Default</label></td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><input type="radio" name="bezier_background_type" value="file" onchange="changeBezierBackgroundType();" /></td>
-      <td style="vertical-align: top;"><label for="bezier_background_file">File*:</label></td>
-      <td>
-	<input type="file" id="bezier_background_file" name="bezier_background_file" accept="image/*" onchange="loadBezierBackground();" style="width: 330px;" />
-	<br/>
-	<span style="font-size: 7pt; color: #686868;">* this site will not store nor keep background images you upload, except you <i>explicitly</i> publish them via the Model&rarr;Publish menu.</span>
-      </td>
-    </tr>
-  </table>
-</form>
-</div>
-
-
-
 <div id="register_head">
   <span onclick="show_register_card('mesh_controls');"       id="regh_mesh_controls"       class="register_tab_selected">Mesh Settings</span>
   <span onclick="show_register_card('print_controls');"      id="regh_print_controls"      class="register_tab">Advanced Settings</span>
@@ -493,54 +410,6 @@
 
 
 
-
-
-<div class="register_card" id="color_settings" style="display: none;">
-  <script>
-    function changeColor( c ) {
-          document.forms["color_form"].elements["color"].value = c;
-    
-          // Convert color string to R-G-B values  
-          previewCanvasHandler.setMaterialColorRGB( c,
-                                                    true // redraw
-                                                    );
-    }
-  </script>
-  <h3>Color</h3>
-  <form name="color_form">
-    <input type="hidden" name="color" value="#2c8aff" />
-  </form>
-  <table style="border: 0;">
-    <tr>
-      <td class="color_cell"><div class="color_picker" style="background-color: #ffffff;" onclick="changeColor('#ffffff');">&nbsp;</div></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="color_cell"><div class="color_picker" style="background-color: #151D28;" onclick="changeColor('#151D28');">&nbsp;</div></td>
-    </tr>
-    <tr>
-      <td class="color_cell"><div class="color_picker" style="background-color: #2c8aff;" onclick="changeColor('#2c8aff');">&nbsp;</div></td>           
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="color_cell"><div class="color_picker" style="background-color: #ff60d4;" onclick="changeColor('#ff60d4');">&nbsp;</div></td> 
-    </tr>
-    <tr>
-      <td class="color_cell"><div class="color_picker" style="background-color: #e00000;" onclick="changeColor('#e00000');">&nbsp;</div></td>
-      <td class="color_cell"><div class="color_picker" style="background-color: #f08900;" onclick="changeColor('#f08900');">&nbsp;</div></td>
-      <td class="color_cell"><div class="color_picker" style="background-color: #f8f000;" onclick="changeColor('#f8f000');">&nbsp;</div></td>
-      <td class="color_cell"><div class="color_picker" style="background-color: #00c000;" onclick="changeColor('#00c000');">&nbsp;</div></td>
-      <td class="color_cell"><div class="color_picker" style="background-color: #0040e0;" onclick="changeColor('#0040e0');">&nbsp;</div></td>
-      <td class="color_cell"><div class="color_picker" style="background-color: #a000a0;" onclick="changeColor('#a000a0');">&nbsp;</div></td>
-    </tr>
-  </table>
-  <script language="Javascript">
-    if( isDildoGeneratorDomain() )
-        document.write( "<br/><div style=\"font-size: 7pt; text-align: right; color: #686868;\">Please note that not all of these colors are available in silicone.</div>\n" );
-  </script>
-</div>
 
 
 
@@ -554,8 +423,6 @@
      The actual weight depends on the material you use.
    </div>
 </div>
-
-
 
 <!-- DUMMY FORM FOR STL EXPORT -->
 <form name="stl_form">
