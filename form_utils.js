@@ -1,6 +1,6 @@
 
 /**
- * These are some helper functions that were moved from the main.html to 
+ * These are some helper functions that were moved from the main.html to
  * keep the code simple.
  *
  * Requires:
@@ -57,7 +57,7 @@ function getSelectedRadioBoxValueByName( formName, radioName ) {
     for( var i = 0; i < radios.length; i++ ) {
         if( radios[i].checked )
             return radios[i].value;
-    }                                                                                 
+    }
     return undefined;
 }
 
@@ -69,7 +69,7 @@ function setSelectedRadioBoxValueByName( formName, radioName, value ) {
             //return radios[i].value;
 	    return true;
 	}
-    }                                                                                 
+    }
     return false;
 }
 
@@ -88,21 +88,18 @@ function setSelectedShapeStyle( shapeStyle ) {
 }
 
 function getBendingValue( value ) {
-    return document.getElementById('preview_bend').value;
 }
 
 function setBendingValue( value ) {
-    document.getElementById('preview_bend').value = value;
     displayBendingValue();
 }
 
 function displayBendingValue() {
-    document.getElementById('preview_bend_display').innerHTML = document.getElementById('preview_bend').value;
 }
 
 
 function getTwistValue( value ) {
-    return document.getElementById('preview_twist').value;
+    return 0;
 }
 
 function setTwistValue( value ) {
@@ -125,9 +122,9 @@ function toggleFormElementsEnabled() {
 }
 
 function toggleMeshDirectionEnabled() {
-    document.getElementById('directions_xyz').disabled = 
-	document.getElementById('directions_yxz').disabled = 
-	( !document.getElementById('split_shape').checked || 
+    document.getElementById('directions_xyz').disabled =
+	document.getElementById('directions_yxz').disabled =
+	( !document.getElementById('split_shape').checked ||
 	  !document.getElementById('arrange_splits_on_plane').checked );
 
     toggleMeshBaseEnabled();
@@ -135,24 +132,24 @@ function toggleMeshDirectionEnabled() {
 
 
 function toggleMeshBaseEnabled() {
-    document.getElementById('mesh_hull_perpendicular').disabled = 
-	document.getElementById('mesh_hull_prism').disabled = 
-	( !document.getElementById('split_shape').checked || 
+    document.getElementById('mesh_hull_perpendicular').disabled =
+	document.getElementById('mesh_hull_prism').disabled =
+	( !document.getElementById('split_shape').checked ||
 	  !document.getElementById('arrange_splits_on_plane').checked );
 }
 
 function toggleMeshHullStyleEnabled() {
     if( !document.getElementById('mesh_hull_style_continuous') || document.getElementById('mesh_hull_style_discrete') )
 	return;
-    document.getElementById('mesh_hull_style_continuous').disabled = 
-	document.getElementById('mesh_hull_style_discrete').disabled = 
-	( !document.getElementById('split_shape').checked 	  
-	  //!document.getElementById('arrange_splits_on_plane').checked 
+    document.getElementById('mesh_hull_style_continuous').disabled =
+	document.getElementById('mesh_hull_style_discrete').disabled =
+	( !document.getElementById('split_shape').checked
+	  //!document.getElementById('arrange_splits_on_plane').checked
 	);
 }
 
 function togglePartsEnabled() {
-    document.getElementById('parts_both').disabled = 
+    document.getElementById('parts_both').disabled =
 	document.getElementById('parts_left').disabled =
 	document.getElementById('parts_right').disabled =
 	( !document.getElementById('split_shape').checked );
@@ -166,17 +163,17 @@ function togglePartsEnabled() {
                         return radios[i].value;
                         }
                         return undefined;
-                        }  
+                        }
 */
 
 function changeBezierBackgroundType() {
     var type = getSelectedBezierBackgroundType();
     if( type == "default" ) {
-	bezierCanvasHandler.setCustomBackgroundImage( null, 
+	bezierCanvasHandler.setCustomBackgroundImage( null,
 			                              true             // redraw when ready
-						    ); 
+						    );
     } else if( type == "file" ) {
-	document.forms['bezier_background_form'].elements['bezier_background_file'].click();		
+	document.forms['bezier_background_form'].elements['bezier_background_file'].click();
     }
 }
 

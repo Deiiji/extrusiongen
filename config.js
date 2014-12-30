@@ -2,7 +2,7 @@
  * This is a global config file that helps to configure basic settings for the
  * dildo generator.
  *
- * It should help the guys from wamungo.com to customize the dildo generator in 
+ * It should help the guys from wamungo.com to customize the dildo generator in
  * a comfortable manner.
  *
  *
@@ -38,16 +38,16 @@ _DILDO_CONFIG.AUTO_RESIZE_ON_DOCUMENT_LOAD = true;
  * Set this flag to true if you wish the Model->Publish item to be hidden.
  * Valid values: true|false
  **/
-//_DILDO_CONFIG.HIDE_PUBLISH_MESH_MENU       = !isDildoGeneratorDomain();  
-_DILDO_CONFIG.HIDE_PUBLISH_MESH_MENU       = false; 
+//_DILDO_CONFIG.HIDE_PUBLISH_MESH_MENU       = !isDildoGeneratorDomain();
+_DILDO_CONFIG.HIDE_PUBLISH_MESH_MENU       = false;
 
 
 /**
  * Set this flag to true if you wish the Model->Export sub menu to be hidden.
  * Valid values: true|false
  **/
-_DILDO_CONFIG.HIDE_EXPORT_MESH_MENU       = false;  
-//_DILDO_CONFIG.HIDE_EXPORT_MESH_MENU       = true; 
+_DILDO_CONFIG.HIDE_EXPORT_MESH_MENU       = false;
+//_DILDO_CONFIG.HIDE_EXPORT_MESH_MENU       = true;
 
 
 
@@ -56,7 +56,7 @@ _DILDO_CONFIG.HIDE_EXPORT_MESH_MENU       = false;
  * Valid values: true|false
  **/
 //_DILDO_CONFIG.HIDE_PRINT_MENU             = false; // true|false
-_DILDO_CONFIG.HIDE_PRINT_MENU             = !isDildoGeneratorDomain(); 
+_DILDO_CONFIG.HIDE_PRINT_MENU             = true;
 
 /**
  * Set the Print->Order_Print sub menu action to the specific javascript action (string).
